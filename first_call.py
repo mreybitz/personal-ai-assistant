@@ -9,14 +9,13 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
-MODEL = "google/gemma-4-26b-a4b-it:floor"
+MODEL = "gpt-4.1-mini"
 
-# Read your key from the .env file, then connect to OpenRouter with it.
+# Read your key from the .env file, then connect to OpenAI with it.
 # The key never appears in this file.
 load_dotenv()
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ["OPENROUTER_API_KEY"],
+    api_key=os.environ["OPENAI_API_KEY"],
 )
 
 # The conversation is a list of messages. The system message sets the

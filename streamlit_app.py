@@ -17,7 +17,7 @@ SYSTEM_PROMPT = """You are a friendly, helpful assistant.
 Keep your answers short: two or three sentences."""
 
 # ---------- Settings ----------
-MODEL = "google/gemma-4-26b-a4b-it:floor"
+MODEL = "gpt-4.1-mini"
 MAX_REPLY_TOKENS = 300  # the longest reply allowed, in tokens
 MAX_MESSAGES = 20  # the most messages one visitor can send in a chat
 
@@ -25,8 +25,7 @@ MAX_MESSAGES = 20  # the most messages one visitor can send in a chat
 # from the app's secrets. Either way, it never appears in this file.
 load_dotenv()
 client = openai.OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ["OPENROUTER_API_KEY"],
+    api_key=os.environ["OPENAI_API_KEY"],
 )
 
 st.title(TITLE)
